@@ -1,6 +1,12 @@
 SETUP AND INSTALLATION:
+	
 	System:
 		Ubuntu 18.04 LTS
+
+	python3 manage.py migrate
+	python3 manage.py runserver
+
+
 	Postgresql:
 		sudo systemctl status postgresql.service
 		sudo systemctl start postgresql
@@ -9,9 +15,6 @@ SETUP AND INSTALLATION:
 			postgres=# \du
 			postgres=# CREATE ROLE mydatabaseuser PASSWORD 'mypassword' SUPERUSER LOGIN CREATEROLE CREATEDB;
 			postgres=# \q
-
-	python3 manage.py migrate
-	python3 manage.py runserver
 
 	Migrations:
 		Change model.
@@ -29,3 +32,6 @@ SETUP AND INSTALLATION:
 
 		python manage.py runserver
 		http://127.0.0.1:8000/admin/
+
+	Running Tests:
+		python manage.py test polls
